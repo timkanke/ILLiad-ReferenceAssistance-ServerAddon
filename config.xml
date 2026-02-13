@@ -1,0 +1,41 @@
+<Configuration>
+  <Name>On Shelf Notifications</Name>
+  <Author>Atlas Systems, Inc.</Author>
+  <Version>1.0.1</Version>
+  <Active>true</Active>
+  <Type>Server</Type>
+  <Description>Sends notifications for requests in Customer Notified via E-Mail at regular intervals to remind patrons that they have items waiting to be picked up.</Description>
+  <Settings>
+    <Setting name="NVTGC" value="" type="string">
+      <Description>Comma-separated list of NVTGCs to process. Please list out all NVTGCs as they would appear in the NVTGC field on the Users form. If left blank, the addon will process requests from all NVTGCs.</Description>
+    </Setting>
+    <Setting name="EmailName" value="" type="string">
+      <Description>Name of the email template to send.</Description>
+    </Setting>
+    <Setting name="LibraryUseOnlyEmailName" value="" type="string">
+      <Description>Name of the email template to send for items marked as library use only. Leave this setting blank to send the same e-mail for all items.</Description>
+    </Setting>
+    <Setting name="NotificationTime" value="" type="string">
+      <Description>Time of day that notifications are to be sent in 24-hour time format. For example, 2:30 PM would be 1430, and 10:00 AM would be 1000. Depending on your SystemManagerAddonInterval customization key, notifications may not be sent at exactly this time.</Description>
+    </Setting>
+    <Setting name="NotificationDaysOfWeek" value="" type="string">
+      <Description>Comma-separated list of days of the week that notifications are to be sent. Do not abbreviate day names.</Description>
+    </Setting>
+    <Setting name="NotificationWaitDays" value="" type="string">
+      <Description>Number of days to wait before notifications begin to be sent.</Description>
+    </Setting>
+    <Setting name="OnShelfRemovalDays" value="" type="string">
+      <Description>Number of days an item can stay on the shelf before being routed to the RemoveFromShelfQueue. Leave blank if you do not wish to use this option.</Description>
+    </Setting>
+    <Setting name="DueDateRemovalDays" value="" type="string">
+      <Description>Number of days before an item's due date that a request will be routed to the RemoveFromShelfQueue. Leave blank if you do not wish to use this option.</Description>
+    </Setting>
+    <Setting name="RemoveFromShelfQueue" value="" type="string">
+      <Description>Queue for items that should be removed from the shelf and returned to the lender. Leave blank if you are not using the OnShelfRemovalDays or DueDateRemovalDays settings.</Description>
+    </Setting>
+  </Settings>
+  <Forms />
+  <Files>
+    <File>OnShelfNotifications.lua</File>
+  </Files>
+</Configuration>
